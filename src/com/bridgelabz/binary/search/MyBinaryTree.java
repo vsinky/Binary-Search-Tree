@@ -30,5 +30,15 @@ private MyBinaryNode<K> root;
 	
 		return root == null ?0 : 1+this.getSizeRecursive(root.left)+this.getSizeRecursive(root.right);
 	}
+	public void inOrder() {
+		inOrderRec(this.root);
+	}
+	private void inOrderRec(MyBinaryNode<K> root) {
+		
+		if(root != null) {
+			inOrderRec(root.left);
+			System.out.println(root.key);
+			inOrderRec(root.right);
+		}
+	}
 }
-
